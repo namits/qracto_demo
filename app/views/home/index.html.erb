@@ -6,12 +6,12 @@
   }
 
   .banner-txt {
-      text-align: center;
-      background: rgba(109, 100, 100, 0.82);
-      font-size: 32px;
-      color: white;
-      padding: 20px 0;
-      margin-bottom: -212px;
+    text-align: center;
+    background: rgba(109, 100, 100, 0.82);
+    font-size: 32px;
+    color: white;
+    padding: 20px 0;
+    margin-bottom: -212px;
   }
 
   .get-start-area {
@@ -26,7 +26,46 @@
     text-align: center;
     border-radius: 24px 0px 24px 0px;
     margin-left: 10px;
-}
+  }
+
+  .display-table {
+    width: 100%;
+    display: flex;
+    display: webkit-flex;
+    display: moz-flex;
+    display: o-flex;
+    display: ms-flexbox;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .about-qracto-point {
+    display: inline-block;
+    width: 75%;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .about-align {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 0px;
+  }
+
+  .white-icon {
+    float: left;
+  }
+
+  .white-text {
+    margin: 0 0 20px 30px;
+    text-align: left;
+  }
+
 </style>
 <section id="home" class="u-py-100 u-h-100vh u-flex-center home-style">
   <div class="container">
@@ -39,31 +78,54 @@
   </div>
 </section>
 <section id="about">
-<div class="container">
-   <div class="row align-items-center">
-      <div class="col-lg-5 text-center">
-          <%=image_tag("app/s-2_1.png", class:"wow fadeInLeft", alt: "")%>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center about-align">
+        <h1>Qracto Identity</h1>
+        <h4>Advanced Analytics Experts</h4>
+      </div>
+      <div class="display-table">
+        <div class="col-xs-12 col-sm-12 dis-tbl-cel text-center">
+          <div class="self-serve-cont">
+            <p>Approach to augmented data discovery and advanced analytics tools is based upon</p>
 
+            <div class="about-qracto-point">
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="white-icon"><img src="/assets/landing/leftarrow.jpg" alt="Technology Leadership" title="Technology Leadership"></div>
+                <p class="white-text">Technology Leadership</p>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="white-icon"><img src="/assets/landing/leftarrow.jpg" alt="Team Environment" title="Team Environment"></div>
+                <p class="white-text">Team Environment</p>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="white-icon"><img src="/assets/landing/leftarrow.jpg" alt="Customer and Partner Focus" title="Customer and Partner Focus"></div>
+                <p class="white-text">Customer and Partner Focus</p>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <p>
+              Qracto solution includes dynamic, cutting-edge business intelligence and data discovery tools conceived and developed by Elegant MicroWeb. The Qracto product represents the evolution of the Elegant MicroWeb flagship ElegantJ BI business intelligence tools.
+            </p>
+            <p>
+              Elegant MicroWeb has more than two decades of experience in building world-class software products and applications. In the ensuing decades, the team has developed a report writer, a PDF publisher, tools for graphing and charting, and a library of JAVA beans to address networking, database connectivity, graphs other needs. The team uses a unique Managed Memory Computing approach for performance balancing and easy handling of large datasets for all business intelligence and analytical needs.
+            </p>
+            <p>
+              The client base for Elegant MicroWeb, ElegantJ BI and Qracto products is comprised of small, medium and large businesses around the world.
+            </p>
+            <p>
+              Qracto Augmented Analytics represents the evolution of the ElegantJ BI approach to business intelligence, and the significance of self-serve data preparation, smart visualization, assisted predictive modeling, and Clickless Analytics powered by Natural Language Processing.
+            </p>
+            <p>
+              The <a href="https://www.elegantjbi.com/elegantjbi/business-intelligence-company-india.html" target="_blank">Qracto team</a> experts combines business intelligence, business analysts, data scientists, engineers and data warehouse (DWH) professionals, working together to redefine and re-imagine business intelligence tools and to create a solid foundation in which Business Users can become Citizen Data Scientists.
+            </p>
+          </div>
+        </div><!-- dis-tbl-cel end -->
       </div>
-      <div class="col-lg-6 ml-auto">
-         <h2 class="h1">
-            Everything you Need to Making a Beautiful Presentation.
-         </h2>
-         <div class="u-h-4 u-w-50 bg-primary rounded mt-4 mb-5"></div>
-         <p class="mb-5">
-            Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestie possim. Ut wisi enim ad placerat facer possim assum minim veniam quis nostrud exerci tation ullamcorper quis nostrud exerci tation ullamcorper litterarum formas humanitatis per.
-         </p>
-         <a href="#" class="btn btn btn-rounded btn-green px-4">
-         <i class="fa fa-apple mr-1"></i>
-         App Store
-         </a>
-         <a href="#" class="btn btn btn-rounded btn-pink ml-3 px-4">
-         <i class="fa fa-android mr-1"></i>
-         Play Store
-         </a>
-      </div>
-   </div>
-</div>
+    </div>
+  </div>
 </section>
 
 <section class="main-bg-back-1">
