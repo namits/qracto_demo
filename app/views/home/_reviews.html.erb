@@ -1,0 +1,89 @@
+<div class="container">
+   <div class="row">
+      <div class="col-lg-6 m-auto text-center">
+         <h2 class="h1">
+            What They Said
+         </h2>
+         <div class="u-h-4 u-w-50 bg-primary rounded mt-4 u-mb-40 mx-auto"></div>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col-12 u-mt-80 text-center">
+         <div data-init="carousel" data-slick='{
+            "slidesToShow":2,
+            "slidesToScroll": 1,
+            "arrows":true,
+            "prevArrow":"<div class=\"slick-prev box-shadow-v1\"><i class=\"fa fa-angle-left\"></i></div>",
+            "nextArrow":"<div class=\"slick-next box-shadow-v1\"><i class=\"fa fa-angle-right\"></i></div>",
+            "responsive": [
+            {
+            "breakpoint":1024,
+            "settings":{
+            "slidesToShow": 2,
+            "arrows":false,
+            "dots":true
+            }
+            },
+            {
+            "breakpoint":600,
+            "settings":{
+            "slidesToShow": 1,
+            "arrows":false,
+            "dots":true
+            }
+            }
+            ]
+            }' data-slick-margin="15">
+            <div class="p-5 bg-green rounded box-shadow-v1 my-4">
+            <%=image_tag("person/1.jpg", class: "rounded-circle u-w-70 mx-auto mb-4", alt: "")%>
+
+               <h4 class="text-white">
+                  Kenelia Deshmukh
+               </h4>
+               <p class="text-muted">
+                  Creative Director
+               </p>
+               <p class="text-white">
+                  Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestie possim. Ut wisi enim ad placerat facer.
+               </p>
+            </div>
+            <div class="p-5 rounded box-shadow-v1 my-4">
+            <%=image_tag("person/4.jpg", class: "rounded-circle u-w-70 mx-auto mb-4", alt: "")%>
+               <h4>
+                  Alex
+               </h4>
+               <p class="text-muted">
+                  Creative Director
+               </p>
+               <p>
+                  Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestie possim. Ut wisi enim ad placerat facer.
+               </p>
+            </div>
+            <div class="p-5 bg-green rounded box-shadow-v1 my-4">
+            <%=image_tag("person/2.jpg", class: "rounded-circle u-w-70 mx-auto mb-4", alt: "")%>
+               <h4 class="text-white">
+                  David Case
+               </h4>
+               <p class="text-muted">
+                  Designer
+               </p>
+               <p class="text-white">
+                  Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestie possim. Ut wisi enim ad placerat facer.
+               </p>
+            </div>
+            <div class="p-5 rounded box-shadow-v1 my-4">
+            <%=image_tag("person/3.jpg", class: "rounded-circle u-w-70 mx-auto mb-4", alt: "")%>
+               <h4>
+                  Kenelia Deshmukh
+               </h4>
+               <p class="text-muted">
+                  Creative Director
+               </p>
+               <p>
+                  Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestie possim. Ut wisi enim ad placerat facer.
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
