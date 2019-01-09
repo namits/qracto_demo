@@ -1,0 +1,18 @@
+# Load DSL and Setup Up Stages
+require 'capistrano/setup'
+require 'capistrano/deploy'
+
+require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
+
+# require "capistrano/rvm"
+# require "capistrano/rbenv"
+# require "capistrano/chruby"
+require "capistrano/bundler"
+require "capistrano/rails/assets"
+require "capistrano/rails/migrations"
+# Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
+
+require 'capistrano/rails'
+require 'capistrano/puma'
+Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
