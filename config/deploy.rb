@@ -18,8 +18,9 @@ set :scm_password, "Naimish@qwertyuiop"
 set :user, "root"
 # set :rvm_type, :user
 set (:deploy_to) { "/home/#{application}/#{stage}" }
+set :tmp_dir, "/home"
 set :keep_releases, 5
-set :repository, "git@github.com:namits/qracto.git"
+set :repository, "https://github.com/namits/qracto.git"
 set :use_sudo, false
 set :scm, :git
 # ssh_options[:forward_agent] = true

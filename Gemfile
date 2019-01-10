@@ -38,6 +38,10 @@ group :development, :test do
   gem "capistrano-rails", "~> 1.4", require: false
   gem 'capistrano3-puma'
   gem 'capistrano-rvm'
+  gem "bcrypt_pbkdf", require: false
+  gem "net-ssh", ">= 4.0.0", require: false
+  gem "rbnacl", "~> 3.4", require: false
+  gem "rbnacl-libsodium", require: false
 end
 
 gem 'rvm-capistrano'

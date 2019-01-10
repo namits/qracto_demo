@@ -45,6 +45,8 @@ GEM
     arel (8.0.0)
     autoprefixer-rails (9.4.4)
       execjs
+    bcrypt_pbkdf (1.0.0)
+    bcrypt_pbkdf (1.0.0-x64-mingw32)
     bindex (0.5.0)
     bootstrap (4.0.0)
       autoprefixer-rails (>= 6.0.3)
@@ -89,8 +91,8 @@ GEM
     crass (1.0.4)
     erubi (1.8.0)
     execjs (2.7.0)
-    ffi (1.9.25)
-    ffi (1.9.25-x64-mingw32)
+    ffi (1.10.0)
+    ffi (1.10.0-x64-mingw32)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
     get_process_mem (0.2.3)
@@ -154,6 +156,10 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    rbnacl (3.4.0)
+      ffi
+    rbnacl-libsodium (1.0.16)
+      rbnacl (>= 3.0.1)
     rubyzip (1.2.2)
     rvm-capistrano (1.5.0)
       capistrano (>= 2.15.4)
@@ -217,6 +223,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt_pbkdf
   bootstrap (~> 4.0.0.beta3)
   byebug
   capistrano (~> 3.10)
@@ -228,8 +235,11 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   font-awesome-rails
   jbuilder (~> 2.5)
+  net-ssh (>= 4.0.0)
   puma (= 3.7)
   rails (= 5.1.5)
+  rbnacl (~> 3.4)
+  rbnacl-libsodium
   rvm-capistrano
   sass-rails (~> 5.0)
   selenium-webdriver
