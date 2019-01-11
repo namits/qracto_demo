@@ -18,15 +18,25 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 
 namespace :deploy do
+  desc 'Make sure local git is in sync with remote.'
+  task :check_revision, roles: :web do
+    unless `git rev-parse HEAD` == `git rev-parse origin/master`
+      puts 'WARNING: HEAD is not the same as origin/master'
+      puts 'Run `git push` to sync changes.'
+      exit
+    end
+  end
+
   desc "restart unicorn server"
   task :restart do
     on "root@159.89.155.36" do
-      execute "cd /home/root/qracto/production/current/ && sudo gem install bundler"
+      execute "cd /home/root/qracto/production/current/ && gem install bundler"
       execute "chmod +x /home/root/qracto/production/current/config/unicorn_init.sh"
       execute "sudo /etc/init.d/qracto restart"
     end
   end
   after 'deploy', 'deploy:restart'
+
 end
 
 
