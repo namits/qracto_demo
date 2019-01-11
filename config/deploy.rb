@@ -6,7 +6,7 @@ set :rvm_ruby_string, '2.3.3'             # ruby version you are using...
 set :user, 'root'
 set :rvm_type, :system
 set :application, "qracto"
-set :repo_url, "git@github.com:namits/qracto.git"
+set :repo_url, "git://github.com/namits/qracto.git"
 set (:deploy_to) { "/home/root/qracto/production" }
 
 
@@ -21,8 +21,8 @@ namespace :deploy do
   desc "restart unicorn server"
   task :restart do
     on "root@159.89.155.36" do
-      execute "cd qracto/production/current/ && sudo gem install bundler"
-      execute "chmod +x qracto/production/current/config/unicorn_init.sh"
+      execute "cd /home/root/qracto/production/current/ && sudo gem install bundler"
+      execute "chmod +x /home/root/qracto/production/current/config/unicorn_init.sh"
       execute "sudo /etc/init.d/qracto restart"
     end
   end
