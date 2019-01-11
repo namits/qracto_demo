@@ -8,6 +8,7 @@ set :rvm_type, :system
 set :application, "qracto"
 set :repo_url, "git://github.com/namits/qracto.git"
 set (:deploy_to) { "/home/root/qracto/production" }
+set :rvm_map_bins, %w{gem rake ruby rails bundle}
 
 
 # Default value for :linked_files is []
