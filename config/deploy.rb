@@ -19,11 +19,13 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 
 namespace :deploy do
   desc 'Make sure local git is in sync with remote.'
-  task :check_revision, roles: :web do
-    unless `git rev-parse HEAD` == `git rev-parse origin/master`
-      puts 'WARNING: HEAD is not the same as origin/master'
-      puts 'Run `git push` to sync changes.'
-      exit
+  task :check_revision do
+    on "root@159.89.155.36" do
+      unless `git rev-parse HEAD` == `git rev-parse origin/master`
+        puts 'WARNING: HEAD is not the same as origin/master'
+        puts 'Run `git push` to sync changes.'
+        exit
+      end
     end
   end
 
