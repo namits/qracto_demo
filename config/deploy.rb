@@ -46,15 +46,15 @@ namespace :deploy do
   end
   after 'deploy', 'deploy:setup_config'
 
-  # desc "restart unicorn server"
-  # task :restart do
-  #   on "root@159.89.155.36" do
-  #     run "cd /home/root/qracto/production/current && gem install bundler"
-  #     run "chmod +x /home/root/qracto/production/current/config/unicorn_init.sh"
-  #     run "sudo /etc/init.d/qracto restart"
-  #   end
-  # end
-  # after 'deploy', 'deploy:restart'
+  desc "restart unicorn server"
+  task :restart do
+    on "root@159.89.155.36" do
+      run "cd /home/root/qracto/production/current && gem install bundler"
+      run "chmod +x /home/root/qracto/production/current/config/unicorn_init.sh"
+      run "sudo /etc/init.d/qracto restart"
+    end
+  end
+  after 'deploy', 'deploy:restart'
 
 end
 
