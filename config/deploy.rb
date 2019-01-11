@@ -10,7 +10,6 @@ set :repo_url, "git://github.com/namits/qracto.git"
 set (:deploy_to) { "/home/root/qracto/production" }
 set :rvm_map_bins, %w{gem rake ruby rails bundle}
 
-before "deploy:assets:precompile","deploy:config_symlink"
 # Default value for :linked_files is []
 append :linked_files, "config/database.yml", "config/secrets.yml"
 
@@ -39,13 +38,6 @@ namespace :deploy do
     end
   end
 
-  desc 'Congifure symlinks like database.yml'
-  task :config_symlink do
-    on "root@159.89.155.36" do
-      run "ln -sf #{shared_path}/database.yml #{release_path}/config/database.yml"
-    end
-  end
-
   task :setup_config do
     on "root@159.89.155.36" do
       sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"
@@ -56,15 +48,15 @@ namespace :deploy do
   end
   after 'deploy', 'deploy:setup_config'
 
-  # desc "restart unicorn server"
-  # task :restart do
-  #   on "root@159.89.155.36" do
-  #     execute "cd /home/root/qracto/production/current/ && gem install bundler"
-  #     execute "chmod +x /home/root/qracto/production/current/config/unicorn_init.sh"
-  #     execute "sudo /etc/init.d/qracto restart"
-  #   end
-  # end
-  # after 'deploy', 'deploy:restart'
+  desc "restart unicorn server"
+  task :restart do
+    on "root@159.89.155.36" do
+      run "cd /home/root/qracto/production/current && gem install bundler"
+      run "chmod +x /home/root/qracto/production/current/config/unicorn_init.sh"
+      run "sudo /etc/init.d/qracto restart"
+    end
+  end
+  after 'deploy', 'deploy:restart'
 
 end
 
