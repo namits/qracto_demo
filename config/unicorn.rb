@@ -5,7 +5,7 @@ before_fork do |server, worker|
     ActiveRecord::Base.connection.disconnect!
   end
 
-  old_pid = "/home/qracto/production/current/tmp/pids/unicorn.pid.oldbin"
+  old_pid = "/home/root/qracto/production/current/tmp/pids/unicorn.pid.oldbin"
 
   if File.exists?(old_pid) && server.pid != old_pid
     begin
@@ -34,7 +34,7 @@ end
 
 
 
-root = "/home/qracto/production/current"
+root = "/home/root/qracto/production/current"
 working_directory root
 pid "#{root}/tmp/pids/unicorn.pid"
 stderr_path "#{root}/log/unicorn.log"
