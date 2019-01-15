@@ -18,7 +18,8 @@
 
   <body>
   <!-- Menu Partials -->
-  <%= render 'layouts/navigation' %>
+  <% navigation = params[:action] == "data_discovery" ? 'layouts/navigation_data_discovery' : 'layouts/navigation' %>
+  <%= render navigation %>
 
    <%= yield %>
 
