@@ -96,6 +96,9 @@
 </style>
 
 <section id="home" class="u-py-100 u-h-100vh u-flex-center home-style">
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "alert alert-warning flash #{key}" %>
+  <% end %>
   <div class="container">
     <div class="banner-txt">
       <p>Smart Data Discovery for Smart Business Users!</p>

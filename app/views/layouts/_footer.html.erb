@@ -38,22 +38,22 @@
               <% end %>
 
               <div class="field">
-                <%= form.label :name %>
+                <%= form.label :name, 'Name(*)' %>
                 <%= form.text_field :name, id: :visitor_name, validate: { presence: true }  %>
               </div>
 
               <div class="field">
-                <%= form.label :email %>
+                <%= form.label :email, 'Email(*)' %>
                 <%= form.text_field :email, id: :visitor_email %>
               </div>
 
               <div class="field">
-                <%= form.label :mobile_no %>
+                <%= form.label :mobile_no, 'Mobile No(*)' %>
                 <%= form.text_field :mobile_no, id: :visitor_mobile_no %>
               </div>
 
               <div class="field">
-                <%= form.label :country %><br>
+                <%= form.label :country, 'Country(*)' %><br>
                 <%= form.country_select :country, id: :visitor_country, selected: "US" %>
               </div>
               <br>
@@ -74,7 +74,7 @@
          <span>© Copyright 2018 - Created by <a target="_blank" href="http://qracto.co">Qracto</a></span>
       </div>
       <div class="col-lg-6 py-4">
-        <%= link_to 'Privacy Policy ', privacy_and_policy_path, target: "_blank"  %>
+        <span class="pull-right"><%= link_to 'Privacy Policy', privacy_and_policy_path, target: "_blank"  %></span>
       </div>
    </div>
 </div>

@@ -25,7 +25,7 @@ class VisitorsController < ApplicationController
   # POST /visitors.json
   def create
     @visitor = Visitor.new(visitor_params)
-    message = @visitor.save ? 'Visitor was successfully created.' : 'Something went wrong.'
+    message = @visitor.save ? 'Visitor was successfully created.' : 'Incomplete Information.'
     redirect_to root_path, notice: message
   end
 

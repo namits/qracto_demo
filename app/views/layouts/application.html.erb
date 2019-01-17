@@ -18,11 +18,8 @@
 
   <body>
   <!-- Menu Partials -->
-  <% navigation = params[:action] == "data_discovery" ? 'layouts/navigation_data_discovery' : 'layouts/navigation' %>
+  <% navigation = params[:action] == "index" ? 'layouts/navigation' : 'layouts/navigation_data_discovery' %>
   <%= render navigation %>
-  <% flash.each do |key, value| %>
-    <%= content_tag :div, value, class: "alert alert-warning flash #{key}" %>
-  <% end %>
    <%= yield %>
 
   <!-- Footer Partials -->

@@ -25,7 +25,7 @@ class ProjectDetailsController < ApplicationController
   # POST /project_details.json
   def create
     @project_detail = ProjectDetail.new(project_detail_params)
-    message = @project_detail.save ? 'Project detail was successfully created.' : 'Something went wrong.'
+    message = @project_detail.save ? 'Project detail was successfully created.' : 'Incomplete Information.'
     redirect_to discuss_your_project_path, notice: message
   end
 

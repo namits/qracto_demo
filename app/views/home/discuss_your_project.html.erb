@@ -1,4 +1,7 @@
 <section id="home" class="u-py-100 u-h-100vh u-flex-center home-style">
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "alert alert-warning flash #{key}" %>
+  <% end %>
   <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -15,49 +18,53 @@
       </div>
 
       <div class="col-md-6">
-        <% project_detail = ProjectDetail.new %>
-        <%= form_with(model: project_detail, local: true) do |form| %>
-          <% if project_detail.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(project_detail.errors.count, "error") %> prohibited this project_detail from being saved:</h2>
+        <div class="bg-grey box-shadow-v1 rounded p-5">
+          <div class="dis-tbl-cel">
+            <% project_detail = ProjectDetail.new %>
+            <%= form_with(model: project_detail, local: true) do |form| %>
+              <% if project_detail.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(project_detail.errors.count, "error") %> prohibited this project_detail from being saved:</h2>
 
-              <ul>
-              <% project_detail.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
+                  <ul>
+                  <% project_detail.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
               <% end %>
-              </ul>
-            </div>
-          <% end %>
 
-          <div class="field">
-            <%= form.label :name %>
-            <%= form.text_field :name, id: :project_detail_name %>
-          </div>
+              <div class="field">
+                <%= form.label :name, 'Name(*)' %>
+                <%= form.text_field :name, id: :project_detail_name %>
+              </div>
 
-          <div class="field">
-            <%= form.label :contact_no %>
-            <%= form.text_field :contact_no, id: :project_detail_contact_no %>
-          </div>
+              <div class="field">
+                <%= form.label :contact_no, 'Contact No(*)' %>
+                <%= form.text_field :contact_no, id: :project_detail_contact_no %>
+              </div>
 
-          <div class="field">
-            <%= form.label :email %>
-            <%= form.text_field :email, id: :project_detail_email %>
-          </div>
+              <div class="field">
+                <%= form.label :email, 'Email(*)' %>
+                <%= form.text_field :email, id: :project_detail_email %>
+              </div>
 
-          <div class="field">
-            <%= form.label :country %>
-            <%= form.country_select :country, id: :project_detail_country, selected: "US" %>
-          </div>
+              <div class="field">
+                <%= form.label :country, 'Country(*)' %>
+                <%= form.country_select :country, id: :project_detail_country, selected: "US" %>
+              </div>
 
-          <div class="field">
-            <%= form.label :description %>
-            <%= form.text_area :description, id: :project_detail_description, size: '50x7' %>
-          </div>
+              <div class="field">
+                <%= form.label :description, 'Description(*)' %>
+                <%= form.text_area :description, id: :project_detail_description, size: '50x7' %>
+              </div>
 
-          <div class="actions">
-            <%= form.submit "Let's Create A Success Story", class: 'btn-success' %>
-          </div>
-        <% end %>
+              <div class="actions">
+                <%= form.submit "Let's Create A Success Story", class: 'btn-success' %>
+              </div>
+            <% end %>
+         </div>
+        </div>
       </div>
     </div>
   </div>
