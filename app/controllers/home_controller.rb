@@ -7,4 +7,7 @@ class HomeController < ApplicationController
 
   def discuss_your_project
   end
+
+  def privacy_and_policy
+  end
 end
