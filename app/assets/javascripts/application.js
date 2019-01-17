@@ -13,3 +13,4 @@
 //= require bootstrap
 //= require bundle
 //= require devdap
+//= require rails.validations

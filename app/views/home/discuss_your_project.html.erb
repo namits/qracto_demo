@@ -1,0 +1,64 @@
+<section id="home" class="u-py-100 u-h-100vh u-flex-center home-style">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <span class="signup" style="color: orange; font-size: 31px;">SIGN UP</span>now for your<br> NO-OBLIGATION CONSULTATION</h3>
+        <p>See how Qracto's technology team can transform your project.</p>
+        <h4>After this consultation, walk away with:</h4>
+        <ul class="consultation-points">
+        <li>Validation of your project idea/Scope of your project</li>
+        <li>Industry specific best practices that can be applied to your project</li>
+        <li>Actionable insights on which technology would suit your requirements</li>
+        <li>Implementation and engagement plan of action</li>
+        <li>Ballpark estimate and timeframe of development</li>
+        </ul></span>
+      </div>
+
+      <div class="col-md-6">
+        <% project_detail = ProjectDetail.new %>
+        <%= form_with(model: project_detail, local: true) do |form| %>
+          <% if project_detail.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(project_detail.errors.count, "error") %> prohibited this project_detail from being saved:</h2>
+
+              <ul>
+              <% project_detail.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="field">
+            <%= form.label :name %>
+            <%= form.text_field :name, id: :project_detail_name %>
+          </div>
+
+          <div class="field">
+            <%= form.label :contact_no %>
+            <%= form.text_field :contact_no, id: :project_detail_contact_no %>
+          </div>
+
+          <div class="field">
+            <%= form.label :email %>
+            <%= form.text_field :email, id: :project_detail_email %>
+          </div>
+
+          <div class="field">
+            <%= form.label :country %>
+            <%= form.country_select :country, id: :project_detail_country, selected: "US" %>
+          </div>
+
+          <div class="field">
+            <%= form.label :description %>
+            <%= form.text_area :description, id: :project_detail_description, size: '50x7' %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "Let's Create A Success Story", class: 'btn-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

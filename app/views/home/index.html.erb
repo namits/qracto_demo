@@ -18,7 +18,7 @@
     background-color: #fb397d;
     color: #fff;
     font-weight: 500;
-    display: inline-block;
+    display: inherit;
     border: none;
     height: 50px;
     min-width: 167px;
@@ -84,14 +84,24 @@
     vertical-align: middle;
   }
 
+  .discuss-your-project {
+    padding: 6px 10px;
+    border: 0;
+    background-color: #ee7203;
+    color: white !important;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
 </style>
+
 <section id="home" class="u-py-100 u-h-100vh u-flex-center home-style">
   <div class="container">
     <div class="banner-txt">
       <p>Smart Data Discovery for Smart Business Users!</p>
       <p>Augmented Analytics: Sophisticated, Self-Serve Tools and Guidance for Business Users</p>
       <p>Advanced Data Discovery Tools Suitable for Every Business User and Data Scientist</p>
-      <%= link_to 'Get Started', data_discovery_path, target: "_blank", class: 'get-start-area' %>
+      <%= link_to "Let's Know More", data_discovery_path, target: "_blank", class: 'get-start-area' %>
     </div>
   </div>
 </section>
@@ -125,14 +135,14 @@
             <div class="clearfix"></div>
 
             <p>
-              Qracto solution includes dynamic, cutting-edge business intelligence and data discovery tools conceived and developed by Elegant MicroWeb. The Qracto product represents the evolution of the flagship BI business intelligence tools.
+              Qracto solution includes dynamic, cutting-edge business intelligence and data discovery tools. The Qracto product represents the evolution of the flagship BI business intelligence tools.
               Qracto is experienced in building world-class software products and applications. The team uses a unique Managed Memory Computing approach for performance balancing and easy handling of large datasets for all business intelligence and analytical needs.
             </p>
             <p>
               Qracto Augmented Analytics represents the evolution of approach to business intelligence, and the significance of self-serve data preparation, smart visualization, assisted predictive modeling, and Clickless Analytics powered by Natural Language Processing.
             </p>
             <p>
-              The Qracto team experts combines business intelligence, business analysts, data scientists, engineers and data warehouse (DWH) professionals, working together to redefine and re-imagine business intelligence tools and to create a solid foundation in which Business Users can become Citizen Data Scientists.
+              The Qracto team experts combines business intelligence, business analysts, data scientists, engineers and data warehouse (DWH) professionals, working together to redefine and re-imagine business intelligence tools and to create a solid foundation in which Business Users can become Data Scientists.
             </p>
           </div>
         </div><!-- dis-tbl-cel end -->
@@ -143,6 +153,10 @@
 
 <section id="our-team">
   <%= render 'our_team' %>
+</section>
+
+<section id="our-services">
+  <%= render 'our_services' %>
 </section>
 
 <section id="contact-us">

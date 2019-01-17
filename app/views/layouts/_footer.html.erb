@@ -1,20 +1,69 @@
+<style type="text/css">
+  .country-select {
+    border: 1px solid #e9eff5;
+    padding: 9px 30px;
+    border-radius: 4px;
+    width: 100%;
+}
+</style>
 <footer class="footer-bg-back">
 <div class="container">
    <div class="row">
-      <div class="col-12">
+      <div class="col-6">
         <div class="bg-black box-shadow-v1 rounded p-5">
-          <div class="col-md-5 col-xs-12 dis-tbl-cel">
+          <div class="dis-tbl-cel">
             <h3 class="mt-0">Mailing Address</h3>
             3616 Kirkwood Highway Suite #1579<br>
             Wilmington DE 19808<br>
             Phone: (910)356-1640<br>
             Email:&nbsp;<a title="contact@qracto.co" href="mailto:contact@qracto.co">contact@qracto.co</a>
           </div>
-          <div class="col-md-7">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="bg-black box-shadow-v1 rounded p-5">
+          <div class="dis-tbl-cel">
+            <% visitor = Visitor.new %>
+            <%= form_with(model: visitor, validate: true, local: true) do |form| %>
+              <% if visitor.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(visitor.errors.count, "error") %> prohibited this visitor from being saved:</h2>
+
+                  <ul>
+                  <% visitor.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="field">
+                <%= form.label :name %>
+                <%= form.text_field :name, id: :visitor_name, validate: { presence: true }  %>
+              </div>
+
+              <div class="field">
+                <%= form.label :email %>
+                <%= form.text_field :email, id: :visitor_email %>
+              </div>
+
+              <div class="field">
+                <%= form.label :mobile_no %>
+                <%= form.text_field :mobile_no, id: :visitor_mobile_no %>
+              </div>
+
+              <div class="field">
+                <%= form.label :country %><br>
+                <%= form.country_select :country, id: :visitor_country, selected: "US" %>
+              </div>
+              <br>
+              <div class="actions">
+                <%= form.submit "Submit", class: 'btn-success' %>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
-
 
       <div class="col-12 text-center u-py-60">
           <h2 class="logo-brand-footer">Qracto</h2>

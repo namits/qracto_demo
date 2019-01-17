@@ -4,4 +4,7 @@ class HomeController < ApplicationController
 
   def data_discovery
   end
+
+  def discuss_your_project
+  end
 end
