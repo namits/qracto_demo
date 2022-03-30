@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/capistrano/rvm.git
+  remote: https://github.com/capistrano/rvm.git
   revision: 9cfef39cf0022839dca6b5b330dfefeb5fc363e7
   specs:
     capistrano-rvm (0.1.2)
@@ -146,7 +146,8 @@ GEM
       mini_portile2 (~> 2.4.0)
     popper_js (1.14.5)
     public_suffix (3.0.3)
-    puma (3.7.0)
+    puma (4.3.12)
+      nio4r (~> 2.0)
     rack (2.0.6)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -256,7 +257,7 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 2.5)
   mysql2 (= 0.4.10)
-  puma (= 3.7)
+  puma (= 4.3.12)
   rails (= 5.1.5)
   sass-rails (~> 5.0)
   selenium-webdriver
